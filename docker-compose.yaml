@@ -26,6 +26,7 @@ services:
       - "8080:8080"
     volumes:
       - "wpuploads:/var/www/html/content/uploads"
+      - "./html/content/plugins/plusplant-product:/var/www/html/content/plugins/plusplant-product"
   redis:
     image: redis:latest
     restart: on-failure
