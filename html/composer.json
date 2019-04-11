@@ -1,0 +1,56 @@
+{
+  "name": "pvdheijden/wp-development",
+  "description": "Wordpress Development environment",
+  "type": "project",
+  "minimum-stability": "dev",
+  "prefer-stable": true,
+  "repositories": [
+    {
+      "type": "composer",
+      "url": "https://wpackagist.org"
+    }
+  ],
+  "require": {
+    "php": "7.2.*",
+    "wecodemore/wpstarter": "~2.0",
+    "johnpbloch/wordpress-core": "^5.1",
+    "wpackagist-plugin/redis-cache":"1.4.1",
+    "wpackagist-plugin/minify-html-markup":"1.99"
+  },
+  "require-dev": {
+    "wpackagist-plugin/query-monitor": "*",
+    "wpackagist-plugin/debug-bar": "*"
+  },
+  "config": {
+    "vendor-dir": "vendor",
+    "optimize-autoloader": true
+  },
+  "scripts": {
+    "post-install-cmd": "WCM\\WPStarter\\Setup::run",
+    "post-update-cmd": "WCM\\WPStarter\\Setup::run",
+    "wpstarter": "WCM\\WPStarter\\Setup::run"
+  },
+  "extra": {
+    "wordpress-install-dir": "wp",
+    "wordpress-content-dir": "content",
+    "wpstarter": {
+      "dropins": {
+        "object-cache.php": "content/plugins/redis-cache/includes/object-cache.php"
+      },
+      "prevent-overwrite": [
+        ".gitignore"
+      ]
+    },
+    "installer-paths": {
+      "content/plugins/{$name}": [
+        "type:wordpress-plugin"
+      ],
+      "content/mu-plugins/{$name}": [
+        "type:wordpress-muplugin"
+      ],
+      "content/themes/{$name}": [
+        "type:wordpress-theme"
+      ]
+    }
+  }
+}

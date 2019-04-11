@@ -1,0 +1,43 @@
+version: "3"
+
+services:
+  db:
+    image: mariadb:latest
+    restart: on-failure
+    environment:
+      MYSQL_ROOT_PASSWORD: "root"
+    ports:
+      - "3306:3306"
+    volumes:
+      - "dbdata:/var/lib/mysql"
+  adminer:
+    image: adminer:latest
+    restart: on-failure
+    ports:
+      - "8081:8080"
+  web:
+    environment:
+      WP_ENV: "development"
+    build:
+      context: .
+      dockerfile: Dockerfile
+    restart: on-failure
+    ports:
+      - "8080:8080"
+    volumes:
+      - "wpuploads:/var/www/html/content/uploads"
+  redis:
+    image: redis:latest
+    restart: on-failure
+    ports:
+      - "6379:6379"
+  mailhog:
+    image: mailhog/mailhog:latest
+    restart: on-failure
+    ports:
+      - "1025:1025"
+      - "8082:8025"
+
+volumes:
+  dbdata:
+  wpuploads:

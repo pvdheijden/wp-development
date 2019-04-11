@@ -1,0 +1,6 @@
+### WP Starter
+.env
+/wp-config.php
+wp/
+content/
+vendor/
