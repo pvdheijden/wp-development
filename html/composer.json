@@ -12,12 +12,12 @@
   ],
   "require": {
     "php": "7.2.*",
-    "wecodemore/wpstarter": "~2.0",
-    "johnpbloch/wordpress-core": "^5.1",
-    "wpackagist-plugin/redis-cache":"1.4.1",
-    "wpackagist-plugin/minify-html-markup":"1.99",
-    "wpackagist-plugin/woocommerce":"3.5.7",
-    "wpackagist-theme/storefront":"2.4.5"
+    "wecodemore/wpstarter": "*",
+    "johnpbloch/wordpress-core": "*",
+    "wpackagist-plugin/redis-cache":"*",
+    "wpackagist-plugin/minify-html-markup":"*",
+    "wpackagist-plugin/woocommerce":"*",
+    "wpackagist-theme/storefront":"*"
   },
   "require-dev": {
     "wpackagist-plugin/query-monitor": "*",
