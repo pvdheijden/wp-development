@@ -17,6 +17,7 @@
     "wpackagist-plugin/redis-cache":"*",
     "wpackagist-plugin/minify-html-markup":"*",
     "wpackagist-plugin/woocommerce":"*",
+    "wpackagist-plugin/woocommerce-admin":"*",
     "wpackagist-theme/storefront":"*"
   },
   "require-dev": {

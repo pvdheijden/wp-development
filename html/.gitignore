@@ -1,6 +1,8 @@
 ### WP Starter
 .env
 /wp-config.php
+/index.php
+/wp-cli.yml
 wp/
 content/
 vendor/
