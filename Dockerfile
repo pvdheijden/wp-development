@@ -28,9 +28,11 @@ RUN apt-get install -y git subversion && \
 WORKDIR /var/www
 USER www-data
 
-COPY ./html/composer.* ./html/
-RUN composer --no-interaction --working-dir=./html install && \
+COPY ./html/composer.json ./html/
+RUN composer --no-interaction --working-dir=./html update && \
     mkdir -p ./html/content/uploads
 COPY ./.env.development ./html/.env
+
+COPY ./html/.htaccess ./html/
 
 EXPOSE 8080
