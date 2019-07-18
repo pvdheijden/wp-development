@@ -18,6 +18,7 @@
     "wpackagist-plugin/minify-html-markup":"*",
     "wpackagist-plugin/woocommerce":"*",
     "wpackagist-plugin/woocommerce-admin":"*",
+    "wpackagist-plugin/mollie-payments-for-woocommerce":"*",
     "wpackagist-theme/storefront":"*"
   },
   "require-dev": {

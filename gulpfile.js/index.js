@@ -19,7 +19,7 @@ function execLogging (error, stdout, stderr) {
 }
 
 function wpComposer(cb) {
-    composer({
+    composer('update', {
         'working-dir': path.join(__dirname, '..', 'html'),
         bin: 'composer'
     });
@@ -29,7 +29,7 @@ function wpComposer(cb) {
 
 function _pluginComposer(plugin) {
     return function pluginComposer(cb) {
-        composer({
+        composer( 'update', {
             'working-dir': path.join(__dirname, '..', 'html/content/plugins/', plugin ),
             bin: 'composer'
         });
