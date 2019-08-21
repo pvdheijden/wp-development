@@ -28,7 +28,7 @@ services:
       - "wpuploads:/var/www/html/content/uploads"
       - "./html/content/plugins/plusplant-product:/var/www/html/content/plugins/plusplant-product"
       - "./html/content/plugins/plusplant-instant-buy:/var/www/html/content/plugins/plusplant-instant-buy"
-      - "./html/content/themes/wpd:/var/www/html/content/themes/wpd"
+      - "./html/content/themes/plntn-nl-v2:/var/www/html/content/themes/plntn-nl-v2"
   redis:
     image: redis:latest
     restart: on-failure
