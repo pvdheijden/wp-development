@@ -29,6 +29,7 @@ function wpComposer(cb) {
 
 function _pluginComposer(plugin) {
     return function pluginComposer(cb) {
+        console.log('*****************' + plugin + '*********************');
         composer( 'update', {
             'working-dir': path.join(__dirname, '..', 'html/content/plugins/', plugin ),
             bin: 'composer'
@@ -90,7 +91,7 @@ function serverBuildAndUpdate() {
  *
  */
 
-exports.WP = wpComposer;
+exports.wpDevelopment = wpComposer;
 
 const plusplantProduct = gulp.series(
     _pluginComposer('plusplant-product'),
@@ -108,7 +109,23 @@ const plusplantFulfillment = gulp.series(
 );
 exports.plusplantFulfillment = plusplantFulfillment;
 
+const plusplantInstantBuy = gulp.series(
+    _pluginComposer('plusplant-instant-buy'),
+    _cssSass('plusplant-instant-buy'),
+    _jsMinify('plusplant-instant-buy'),
+    _zipContent('plusplant-instant-buy')
+);
+exports.plusplantInstantBuy = plusplantInstantBuy;
+
+const plusplantAfterpayGateway = gulp.series(
+    _pluginComposer('plusplant-afterpay-gateway'),
+    _cssSass('plusplant-afterpay-gateway'),
+    _jsMinify('plusplant-afterpay-gateway'),
+    _zipContent('plusplant-afterpay-gateway')
+);
+exports.plusplantAfterpayGateway = plusplantAfterpayGateway;
+
 exports.default = gulp.series(
     wpComposer,
-    gulp.parallel(plusplantProduct, plusplantFulfillment),
+    gulp.parallel(plusplantProduct, plusplantFulfillment, plusplantInstantBuy),
     serverBuildAndUpdate);
