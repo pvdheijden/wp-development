@@ -26,11 +26,15 @@ services:
       - "8080:8080"
     volumes:
       - "wpuploads:/var/www/html/content/uploads"
-  redis:
-    image: redis:latest
-    restart: on-failure
-    ports:
-      - "6379:6379"
+      - "./html/content/plugins/miner-hat:/var/www/html/content/plugins/miner-hat"
+#     - "./html/content/themes/px2:/var/www/html/content/themes/px2"
+#     - "./html/content/themes/plntn-nl-v2:/var/www/html/content/themes/plntn-nl-v2"
+      - "./html/content/themes:/var/www/html/content/themes"
+#  redis:
+#    image: redis:latest
+#    restart: on-failure
+#    ports:
+#      - "6379:6379"
   mailhog:
     image: mailhog/mailhog:latest
     restart: on-failure

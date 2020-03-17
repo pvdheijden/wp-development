@@ -9,10 +9,12 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "gulp": "^4.0.0",
-    "gulp-clean-css": "^4.0.0",
-    "gulp-sass": "^4.0.2",
-    "node-sass": "^4.11.0",
-    "sass": "^1.17.2"
+    "debug": "*",
+    "gulp": "*",
+    "gulp-clean-css": "*",
+    "gulp-composer": "*",
+    "gulp-sass": "*",
+    "gulp-zip": "*",
+    "sass": "*"
   }
 }

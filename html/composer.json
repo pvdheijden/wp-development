@@ -11,11 +11,12 @@
     }
   ],
   "require": {
-    "php": "7.2.*",
-    "wecodemore/wpstarter": "~2.0",
+    "php": "7.3.*",
+    "wecodemore/wpstarter": "^2.0",
     "johnpbloch/wordpress-core": "^5.1",
-    "wpackagist-plugin/redis-cache":"1.4.1",
-    "wpackagist-plugin/minify-html-markup":"1.99"
+    "wpackagist-plugin/redis-cache":"^1.5",
+    "wpackagist-plugin/minify-html-markup":"^1.99",
+    "predis/predis": "^1.1"
   },
   "require-dev": {
     "wpackagist-plugin/query-monitor": "*",

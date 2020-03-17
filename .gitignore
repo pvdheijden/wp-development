@@ -3,3 +3,4 @@ node_modules/
 html/vendor
 html/content
 html/wp
+dist/
